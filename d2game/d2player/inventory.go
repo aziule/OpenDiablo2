@@ -27,22 +27,6 @@ func NewInventory() *Inventory {
 	}
 }
 
-func (g *Inventory) IsOpen() bool {
-	return g.isOpen
-}
-
-func (g *Inventory) Toggle() {
-	g.isOpen = !g.isOpen
-}
-
-func (g *Inventory) Open() {
-	g.isOpen = true
-}
-
-func (g *Inventory) Close() {
-	g.isOpen = false
-}
-
 func (g *Inventory) Load() {
 	animation, _ := d2asset.LoadAnimation(d2resource.Frame, d2resource.PaletteSky)
 	g.frame, _ = d2ui.LoadSprite(animation)
@@ -58,6 +42,10 @@ func (g *Inventory) Load() {
 		d2inventory.GetWeaponItemByCode("clb"),
 	}
 	g.grid.Add(items...)
+}
+
+func (g *Inventory) Toggle() {
+	g.isOpen = !g.isOpen
 }
 
 func (g *Inventory) Render(target d2render.Surface) {
@@ -134,4 +122,9 @@ func (g *Inventory) Render(target d2render.Surface) {
 	g.panel.Render(target)
 
 	g.grid.Render(target)
+}
+
+func (g *Inventory) Advance(_ float64) error {
+	// no op
+	return nil
 }

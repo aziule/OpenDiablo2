@@ -31,20 +31,8 @@ func (s *HeroStats) Load() {
 	s.panel, _ = d2ui.LoadSprite(animation)
 }
 
-func (s *HeroStats) IsOpen() bool {
-	return s.isOpen
-}
-
 func (s *HeroStats) Toggle() {
 	s.isOpen = !s.isOpen
-}
-
-func (s *HeroStats) Open() {
-	s.isOpen = true
-}
-
-func (s *HeroStats) Close() {
-	s.isOpen = false
 }
 
 func (s *HeroStats) Render(target d2render.Surface) {
@@ -120,5 +108,9 @@ func (s *HeroStats) Render(target d2render.Surface) {
 	w, h = s.panel.GetCurrentFrameSize()
 	s.panel.SetPosition(x-w, y+h)
 	s.panel.Render(target)
+}
 
+func (s *HeroStats) Advance(_ float64) error {
+	// no op
+	return nil
 }

@@ -1,0 +1,102 @@
+# github.com/JoshVarga/blast v0.0.0-20180421040937-681c804fb9f0
+github.com/JoshVarga/blast
+# github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
+github.com/alecthomas/template
+github.com/alecthomas/template/parse
+# github.com/alecthomas/units v0.0.0-20190924025748-f65c72e2690d
+github.com/alecthomas/units
+# github.com/beefsack/go-astar v0.0.0-20171024231011-f324bbb0d6f7
+github.com/beefsack/go-astar
+# github.com/davecgh/go-spew v1.1.0
+github.com/davecgh/go-spew/spew
+# github.com/go-gl/glfw/v3.3/glfw v0.0.0-20200222043503-6f7a984d4dc4
+github.com/go-gl/glfw/v3.3/glfw
+# github.com/go-restruct/restruct v0.0.0-20191227155143-5734170a48a1
+github.com/go-restruct/restruct
+github.com/go-restruct/restruct/expr
+# github.com/hajimehoshi/ebiten v1.11.2
+github.com/hajimehoshi/ebiten
+github.com/hajimehoshi/ebiten/audio
+github.com/hajimehoshi/ebiten/audio/internal/convert
+github.com/hajimehoshi/ebiten/audio/wav
+github.com/hajimehoshi/ebiten/ebitenutil
+github.com/hajimehoshi/ebiten/ebitenutil/internal/assets
+github.com/hajimehoshi/ebiten/inpututil
+github.com/hajimehoshi/ebiten/internal/affine
+github.com/hajimehoshi/ebiten/internal/buffered
+github.com/hajimehoshi/ebiten/internal/clock
+github.com/hajimehoshi/ebiten/internal/devicescale
+github.com/hajimehoshi/ebiten/internal/driver
+github.com/hajimehoshi/ebiten/internal/glfw
+github.com/hajimehoshi/ebiten/internal/graphics
+github.com/hajimehoshi/ebiten/internal/graphicscommand
+github.com/hajimehoshi/ebiten/internal/graphicsdriver/metal
+github.com/hajimehoshi/ebiten/internal/graphicsdriver/metal/ca
+github.com/hajimehoshi/ebiten/internal/graphicsdriver/metal/mtl
+github.com/hajimehoshi/ebiten/internal/graphicsdriver/metal/ns
+github.com/hajimehoshi/ebiten/internal/graphicsdriver/opengl
+github.com/hajimehoshi/ebiten/internal/graphicsdriver/opengl/gl
+github.com/hajimehoshi/ebiten/internal/hooks
+github.com/hajimehoshi/ebiten/internal/jsutil
+github.com/hajimehoshi/ebiten/internal/mipmap
+github.com/hajimehoshi/ebiten/internal/packing
+github.com/hajimehoshi/ebiten/internal/png
+github.com/hajimehoshi/ebiten/internal/restorable
+github.com/hajimehoshi/ebiten/internal/shareable
+github.com/hajimehoshi/ebiten/internal/thread
+github.com/hajimehoshi/ebiten/internal/uidriver/glfw
+github.com/hajimehoshi/ebiten/internal/uidriver/js
+github.com/hajimehoshi/ebiten/internal/uidriver/mobile
+github.com/hajimehoshi/ebiten/internal/web
+# github.com/hajimehoshi/oto v0.5.4
+github.com/hajimehoshi/oto
+github.com/hajimehoshi/oto/internal/mux
+# github.com/pkg/errors v0.8.1
+github.com/pkg/errors
+# github.com/pmezard/go-difflib v1.0.0
+github.com/pmezard/go-difflib/difflib
+# github.com/robertkrimen/otto v0.0.0-20191219234010-c382bd3c16ff
+github.com/robertkrimen/otto
+github.com/robertkrimen/otto/ast
+github.com/robertkrimen/otto/dbg
+github.com/robertkrimen/otto/file
+github.com/robertkrimen/otto/parser
+github.com/robertkrimen/otto/registry
+github.com/robertkrimen/otto/token
+github.com/robertkrimen/otto/underscore
+# github.com/satori/go.uuid v1.2.0
+github.com/satori/go.uuid
+# github.com/stretchr/testify v1.4.0
+github.com/stretchr/testify/assert
+# golang.org/x/exp v0.0.0-20190731235908-ec7cb31e5a56
+golang.org/x/exp/shiny/driver/gldriver
+golang.org/x/exp/shiny/driver/internal/drawer
+golang.org/x/exp/shiny/driver/internal/errscreen
+golang.org/x/exp/shiny/driver/internal/event
+golang.org/x/exp/shiny/driver/internal/lifecycler
+golang.org/x/exp/shiny/driver/internal/win32
+golang.org/x/exp/shiny/driver/internal/x11key
+golang.org/x/exp/shiny/screen
+# golang.org/x/image v0.0.0-20191009234506-e7c1f5e7dbb8
+golang.org/x/image/math/f64
+# golang.org/x/mobile v0.0.0-20200222142934-3c8601c510d0
+golang.org/x/mobile/app
+golang.org/x/mobile/app/internal/callfn
+golang.org/x/mobile/event/key
+golang.org/x/mobile/event/lifecycle
+golang.org/x/mobile/event/mouse
+golang.org/x/mobile/event/paint
+golang.org/x/mobile/event/size
+golang.org/x/mobile/event/touch
+golang.org/x/mobile/geom
+golang.org/x/mobile/gl
+golang.org/x/mobile/internal/mobileinit
+# golang.org/x/sys v0.0.0-20191026070338-33540a1f6037
+golang.org/x/sys/windows
+# gopkg.in/alecthomas/kingpin.v2 v2.2.6
+gopkg.in/alecthomas/kingpin.v2
+# gopkg.in/sourcemap.v1 v1.0.5
+gopkg.in/sourcemap.v1
+gopkg.in/sourcemap.v1/base64vlq
+# gopkg.in/yaml.v2 v2.2.2
+gopkg.in/yaml.v2

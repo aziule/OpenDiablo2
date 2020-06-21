@@ -10,14 +10,8 @@ import (
 	"github.com/OpenDiablo2/OpenDiablo2/d2core/d2render"
 	"github.com/OpenDiablo2/OpenDiablo2/d2core/d2term"
 	"github.com/OpenDiablo2/OpenDiablo2/d2core/d2ui"
+	"github.com/OpenDiablo2/OpenDiablo2/d2game/d2player/d2menu"
 )
-
-type Panel interface {
-	IsOpen() bool
-	Toggle()
-	Open()
-	Close()
-}
 
 // ID of missile to create when user right clicks.
 var missileID = 59
@@ -26,8 +20,9 @@ type GameControls struct {
 	hero          *d2map.Player
 	mapEngine     *d2map.MapEngine
 	mapRenderer   *d2map.MapRenderer
-	inventory     *Inventory
-	heroStats     *HeroStats
+	inventory     Panel
+	heroStats     Panel
+	ingameMenu    d2menu.Menu
 	inputListener InputCallbackListener
 
 	// UI
@@ -35,6 +30,13 @@ type GameControls struct {
 	mainPanel   *d2ui.Sprite
 	menuButton  *d2ui.Sprite
 	skillIcon   *d2ui.Sprite
+}
+
+type Panel interface {
+	Toggle()
+	Load()
+	Render(target d2render.Surface)
+	Advance(elapsed float64) error
 }
 
 func NewGameControls(hero *d2map.Player, mapEngine *d2map.MapEngine, mapRenderer *d2map.MapRenderer, inputListener InputCallbackListener) *GameControls {
@@ -49,17 +51,27 @@ func NewGameControls(hero *d2map.Player, mapEngine *d2map.MapEngine, mapRenderer
 		mapRenderer:   mapRenderer,
 		inventory:     NewInventory(),
 		heroStats:     NewHeroStats(),
+		ingameMenu:    d2menu.NewMenu(),
 	}
 }
 
 func (g *GameControls) OnKeyDown(event d2input.KeyEvent) bool {
-	if event.Key == d2input.KeyI {
+	switch event.Key {
+	case d2input.KeyI:
 		g.inventory.Toggle()
 		return true
-	}
-	if event.Key == d2input.KeyC {
+	case d2input.KeyC:
 		g.heroStats.Toggle()
 		return true
+	case d2input.KeyEscape:
+		g.ingameMenu.Toggle()
+		return true
+	case d2input.KeyDown:
+		g.ingameMenu.OnSelectDown()
+	case d2input.KeyUp:
+		g.ingameMenu.OnSelectUp()
+	case d2input.KeyEnter:
+		g.ingameMenu.OnEnter()
 	}
 
 	return false
@@ -117,12 +129,14 @@ func (g *GameControls) Load() {
 
 	g.inventory.Load()
 	g.heroStats.Load()
+	g.ingameMenu.Load()
 }
 
 // TODO: consider caching the panels to single image that is reused.
 func (g *GameControls) Render(target d2render.Surface) {
 	g.inventory.Render(target)
 	g.heroStats.Render(target)
+	g.ingameMenu.Render(target)
 
 	width, height := target.GetSize()
 	offset := 0
@@ -197,5 +211,8 @@ func (g *GameControls) Render(target d2render.Surface) {
 	g.globeSprite.SetCurrentFrame(1)
 	g.globeSprite.SetPosition(offset+8, height-8)
 	g.globeSprite.Render(target)
+}
 
+func (g *GameControls) Advance(elapsed float64) error {
+	return g.ingameMenu.Advance(elapsed)
 }

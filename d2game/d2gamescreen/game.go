@@ -98,6 +98,8 @@ func (v *Game) Advance(tickTime float64) error {
 		}
 	}
 
+	v.gameControls.Advance(tickTime)
+
 	// Update the camera to focus on the player
 	if v.localPlayer != nil {
 		rx, ry := v.mapRenderer.WorldToOrtho(v.localPlayer.AnimatedComposite.LocationX/5, v.localPlayer.AnimatedComposite.LocationY/5)
