@@ -39,13 +39,13 @@ func (l *Label) GetText() string {
 }
 
 func (l *Label) SetText(text string) error {
-	if text == l.text {
-		return nil
-	}
 	return l.setText(text)
 }
 
 func (l *Label) setText(text string) error {
+	if text == l.text {
+		return nil
+	}
 	width, height := l.font.GetTextMetrics(text)
 	surface, err := d2render.NewSurface(width, height, d2render.FilterNearest)
 	if err != nil {
